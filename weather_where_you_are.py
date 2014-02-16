@@ -12,7 +12,7 @@ your_loc = location.reverse_geocode(getLocation())[-1]
 # import pprint ; pprint.pprint(your_loc) # useful for debugging
 # See: http://bugs.openweathermap.org/projects/api/wiki
 base_url = 'http://api.openweathermap.org/data/2.5/weather'
-url_fmt = '?q={City},+{State},+{CountryCode}&units=metric'
+url_fmt = '?q={City},+{State},+{CountryCode}'  # &units=metric'
 the_url = base_url + url_fmt.format(**your_loc).replace(' ', '+')
 print(the_url)
 weather = requests.get(the_url).json()
