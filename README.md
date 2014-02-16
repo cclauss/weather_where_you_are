@@ -5,5 +5,5 @@ weather_where_you_are
 
 Inspired by: https://github.com/kultprok/pythonista-drafts-recipes/blob/master/weatherdata/weatherdata.py
 
-[1]: omz-software.com/pythonista
+[1]: http://omz-software.com/pythonista
 [2]: http://openweathermap.org/API
