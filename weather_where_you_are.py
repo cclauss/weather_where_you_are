@@ -19,10 +19,9 @@ weather = requests.get(the_url).json()
 if weather:
     # import pprint ; pprint.pprint(weather) # useful for debugging
     for item in ('temp_min', 'temp_max'):
-        if item not in weather['main']:
-            weather['main'][item] = None # create values if they are not present
-    if 'weather' not in weather: # weather is optional in weather!!
-        weather['weather'] = [ {'description' : 'not available'} ]
+        weather['main'][item] = weather['main'][item] or None # create values if they are not present
+    # weather is optional in weather!!
+    weather['weather'] = weather['weather'] or [ {'description' : 'not available'} ]
     for item in ('sunrise', 'sunset'):
         weather['sys'][item] = time.ctime(weather['sys'][item]).split()[3] # just time, not date
     print('''Current weather at {name}, {sys[country]} is {weather[0][description]}.
